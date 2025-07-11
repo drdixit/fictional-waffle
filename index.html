@@ -9,14 +9,19 @@
 </head>
 
 <body>
-    <div id="output" style="width: 500px; height: 500px; background-color: aquamarine;"></div>
+    <div id="output" style="font-size: 30px; width: 300px; height: 300px; background-color: aquamarine;"></div>
+    <input type="text" id="inputField" value="Type here...">
     <script>
         $(document).ready(function () {
-            $("#output").hover(function () {
-                $(this).text("you entered the div");
-            }, function () {
-                $(this).text("you left the div");
-            })
+            $("#inputField").focus(function () {
+                $("#output").text("Input field focused!");
+            });
+            $("#inputField").blur(function () {
+                $("#output").text("blur event triggered! when you leave input field");
+            });
+            $("#inputField").change(function () {
+                $("#output").text("change event triggered! when you change input field");
+            });
         });
     </script>
 </body>
