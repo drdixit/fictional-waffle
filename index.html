@@ -14,16 +14,34 @@
     <h1 class="classone">classone</h1>
     <button id="testButton1">Hide idone</button>
     <button id="testButton2">Hide classone</button>
+    <h1 class="classone" >classone</h1>
+    <h1 class="classone">classone</h1>
+    <div id="testDiv" style="width: 200px; height: 100px; background: #ff00ff;"></div>
+    <input type="text" id="testInput" value="">
+    <h1 id="testOne">default value</h1>
+    <button id="testOneButton">Click here</button>
     <script>
         // when the document is completely loaded, run this function
         // fancy way of avoiding race conditions
         $(document).ready(function () {
+            let sum = 0;
+            $("#testOneButton").click(function () {
+                sum = sum + 1;
+                $("#testOne").text(`Button was clicked! ${sum}`);
+            })
+
             $("#testButton1").click(function () {
-                $("#idone").hide();
-            })
+                $("#idone").toggle();
+            });
             $("#testButton2").click(function () {
-                $(".classone").hide();
-            })
+                $(".classone").fadeToggle();
+            });
+            $("#testDiv").click(function(){
+                $(this).html("you clicked the div!");
+            });
+            $("#testInput").keyup(function(){
+                $("#testDiv").text($(this).val());
+            });
         });
     </script>
 </body>
