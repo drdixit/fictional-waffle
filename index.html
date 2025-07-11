@@ -13,13 +13,12 @@
     <div id="testDiv" style="width: 300px; height: 300px; background-color: lightblue;">Test Div</div>
     <script>
         $(document).ready(function () {
-            $("#testDiv").on({
+            // setup an event listener to run only once with one method
+            $("#testDiv").one({
                 "click": function () { $("#output").text("Div was clicked!"); },
                 "mouseleave": function () { $("#output").text("Mouse leave Div"); },
                 "mouseenter": function () { $("#output").text("Mouse enter Div"); },
             });
-            // remove the event listeners with off method
-            $("#testDiv").off("click mouseenter");
         });
 
     </script>
