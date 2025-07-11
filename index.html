@@ -10,14 +10,13 @@
 
 <body>
     <div id="output" style="width: 500px; height: 500px; background-color: aquamarine;"></div>
-    <button id="getJsonButton">Get sample.json File</button>
     <script>
         $(document).ready(function () {
-            $("#getJsonButton").click((function () {
-                $.ajax({ url: "sample.json", success: function (result) {
-                    $("#output").html(JSON.stringify(result, null, 4));
-                }});
-            }));
+            $("#output").hover(function () {
+                $(this).text("you entered the div");
+            }, function () {
+                $(this).text("you left the div");
+            })
         });
     </script>
 </body>
