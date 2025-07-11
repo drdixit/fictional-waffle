@@ -18,7 +18,10 @@
                 "mouseleave": function () { $("#output").text("Mouse leave Div"); },
                 "mouseenter": function () { $("#output").text("Mouse enter Div"); },
             });
+            // remove the event listeners with off method
+            $("#testDiv").off("click mouseenter");
         });
+
     </script>
 </body>
 
