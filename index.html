@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fictional Waffle</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1 id="idone">idone</h1>
+    <h1 class="classone" >classone</h1>
+    <h1 class="classone">classone</h1>
+    <button id="testButton1">Hide idone</button>
+    <button id="testButton2">Hide classone</button>
+    <script>
+        // when the document is completely loaded, run this function
+        // fancy way of avoiding race conditions
+        $(document).ready(function () {
+            $("#testButton1").click(function () {
+                $("#idone").hide();
+            })
+            $("#testButton2").click(function () {
+                $(".classone").hide();
+            })
+        });
+    </script>
+</body>
+
+</html>
